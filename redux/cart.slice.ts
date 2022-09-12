@@ -12,6 +12,8 @@ const cartSlice = createSlice({
   name: 'cart',
   initialState: [],
   reducers: {
+    //Argument of type 'any' is not assignable to parameter of type 'never'. 
+    // 外層 state 少 type
     addToCart: (state:any[], action) => {
       const itemExists:Maybe<item>  = state.find((item:item) => item.id === action.payload.id);
       // itemExists has value but TypeScript doesn't know
